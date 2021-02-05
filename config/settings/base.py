@@ -1,5 +1,6 @@
 import os
 import environ
+import django-heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -143,3 +144,5 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/'
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+django_heroku.settings(locals())
