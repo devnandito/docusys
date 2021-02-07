@@ -1,4 +1,4 @@
 import multiprocessing
 
-bind = '127.0.0.1:8001'
+bind = 'unix:/var/www/envapp/.docusys/run/gunicorn.sock'
 workers = multiprocessing.cpu_count() * 2
