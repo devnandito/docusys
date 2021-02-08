@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <aside class="main-sidebar">
   <section class="sidebar">
@@ -39,22 +39,20 @@
           </li>
         </ul>
       </li>
-      {% endif %}
-      {% if request.user.profile.level.id == 1 or  request.user.profile.level.id == 6 %}
+      {% endif %} {% if request.user.profile.level.id == 1 or request.user.profile.level.id == 6 %}
       <li>
-        <a href="{% url 'categories:show' %}">
+        <a href="#">
           <i class="fa fa-th"></i>
           <span>Category</span>
         </a>
       </li>
       <li>
-        <a href="{% url 'products:show' %}">
+        <a href="#">
           <i class="fa fa-product-hunt"></i>
           <span>Products</span>
         </a>
       </li>
-      {% endif %}
-      {% if request.user.profile.level.id == 1 or  request.user.profile.level.id == 2 %}
+      {% endif %} {% if request.user.profile.level.id == 1 or request.user.profile.level.id == 2 %}
       <li>
         <a href="{% url 'clients:show' %}">
           <i class="fa fa-users"></i>
@@ -62,7 +60,7 @@
         </a>
       </li>
       <li class="treeview">
-        <a href="">
+        <a href="#">
           <i class="fa fa-list-ul"></i>
           <span>Sales</span>
           <span class="pull-right-container">
@@ -71,19 +69,19 @@
         </a>
         <ul class="treeview-menu">
           <li>
-            <a href="{% url 'sales:show' %}">
+            <a href="#">
               <i class="fa fa-circle-o"></i>
               <span>Manage sale</span>
             </a>
           </li>
           <li>
-            <a href="{% url 'sales:create' %}">
+            <a href="#">
               <i class="fa fa-circle-o"></i>
               <span>Add sale</span>
             </a>
           </li>
           <li>
-            <a href="{% url 'sales:report' %}">
+            <a href="#">
               <i class="fa fa-circle-o"></i>
               <span>Report sale</span>
             </a>

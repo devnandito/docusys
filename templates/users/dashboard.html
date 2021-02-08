@@ -8,7 +8,7 @@
 {% load widget_tweaks %}
 
 <!--load statics files-->
-{% load staticfiles %}
+{% load static %}
 
 <!--load humanize -->
 {% load humanize %}
@@ -45,13 +45,13 @@
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>${{ total_sales.net__sum|intcomma }} </h3>
+          <h3>${# { total_sales.net__sum|intcomma } #} </h3>
           <p>Ventas</p>
         </div>
         <div class="icon">
           <i class="ion ion-social-usd"></i>
         </div>
-        <a href="{% url 'sales:show' %}" class="small-box-footer">
+        <a href="#" class="small-box-footer">
           Mas info <i class="fa fa-arrow-circle-right"></i>
         </a>
       </div>
@@ -60,13 +60,13 @@
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>{{ total_category }}</h3>
+          <h3>{# { total_category } #}</h3>
           <p>Categorias</p>
         </div>
         <div class="icon">
           <i class="ion ion-clipboard"></i>
         </div>
-        <a href="{% url 'categories:show' %}" class="small-box-footer">
+        <a href="#" class="small-box-footer">
           Mas info <i class="fa fa-arrow-circle-right"></i>
         </a>
       </div>
@@ -75,7 +75,7 @@
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>{{ total_client }}</h3>
+          <h3>{# { total_client } #}</h3>
           <p>Clientes</p>
         </div>
         <div class="icon">
@@ -90,13 +90,13 @@
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>{{ total_product }}</h3>
+          <h3>{# { total_product } #}</h3>
           <p>Productos</p>
         </div>
         <div class="icon">
           <i class="ion ion-ios-cart"></i>
         </div>
-        <a href="{% url 'products:show' %}" class="small-box-footer">
+        <a href="#" class="small-box-footer">
           Mas info <i class="fa fa-arrow-circle-right"></i>
         </a>
       </div>
@@ -139,10 +139,10 @@
         </div>
         <div class="box-footer no-padding">
           <ul class="nav nav-pills nav-stacked">
-            {% for product in product_list1 %}
-              <li><a href="#">{{product.description}}
-                <span class="pull-right text-{% cycle 'red' 'blue' 'green' 'purple' 'aqua' %}"><i class="fa fa-angle-down"></i> {{ product.sales|percent:product_sum.sales__sum }}%</span></a></li>  
-            {% endfor %}
+            {# % for product in product_list1 % #}
+              <li><a href="#">{# {product.description} #}
+                <span class="pull-right text-{% cycle 'red' 'blue' 'green' 'purple' 'aqua' %}"><i class="fa fa-angle-down"></i> {# { product.sales|percent:product_sum.sales__sum } #}%</span></a></li>  
+            {# % endfor % #}
           </ul>
         </div>
       </div>
@@ -166,12 +166,12 @@
             {% for product in product_list %}
             <li class="item">
               <div class="product-img">
-                <img class="img" width="60px" src="{{ product.image.url }}" alt="Product image">
+                <img class="img" width="60px" src="{# { product.image.url } #}" alt="Product image">
               </div>
               <div class="product-info">
                 <a href="" class="product-title">
                   {{ product.description }}
-                  <span class="label label-warning pull-right">{{ product.sale_price|intcomma }}</span>
+                  <span class="label label-warning pull-right">{# { product.sale_price|intcomma } #}</span>
                 </a>
               </div>
             </li>
@@ -179,7 +179,7 @@
           </ul>
         </div>
         <div class="box-footer text-center">
-          <a href="{% url 'products:show' %}" class="uppercase">Ver todos los productos</a>
+          <a href="{# % url 'products:show' % #}" class="uppercase">Ver todos los productos</a>
         </div> 
       </div>
       

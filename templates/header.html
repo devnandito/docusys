@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <header class="main-header">
   <!--LOGOTIPO-->
   <a href="{% url 'users:home' %}" class="logo">
@@ -7,7 +7,7 @@
       <img
         src="{% static 'img/templates/icono-blanco.png' %}"
         class="img-responsive"
-        style="padding: 10px;"
+        style="padding: 10px"
       />
     </span>
     <!-- logo normal-->
@@ -15,7 +15,7 @@
       <img
         src="{% static 'img/templates/logo-blanco-lineal.png' %}"
         class="img-responsive"
-        style="padding: 10px 0px;"
+        style="padding: 10px 0px"
       />
     </span>
   </a>
@@ -30,31 +30,39 @@
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          {% if request.user.profile.picture.url != '' %}
+            {% if request.user.profile.picture.url != '' %}
             <img
-            src="{{ request.user.profile.picture.url }}"
-            class="user-image"
-            alt=""
+              src="{{ request.user.profile.picture.url }}"
+              class="user-image"
+              alt=""
             />
-          {% else %}
+            {% else %}
             <img
-            src="{% static 'media/users/default/anonymous.png' %}"
-            class="user-image"
-            alt=""
+              src="{% static 'media/users/default/anonymous.png' %}"
+              class="user-image"
+              alt=""
             />
-          {% endif %}
+            {% endif %}
             <san class="hidden-xs">{{ request.user }}</san>
           </a>
           <!--Dropdown-toggle-->
           <ul class="dropdown-menu">
             <li class="user-body">
               <div class="pull-right">
-                <a href="{% url 'users:change' request.user.id %}" class="btn btn-default btn-flat">Cambiar password</a>
+                <a
+                  href="{% url 'users:change' request.user.id %}"
+                  class="btn btn-default btn-flat"
+                  >Cambiar password</a
+                >
               </div>
             </li>
             <li class="user-body">
               <div class="pull-right">
-                <a href="{% url 'users:logout' %}" class="btn btn-default btn-flat">Salir</a>
+                <a
+                  href="{% url 'users:logout' %}"
+                  class="btn btn-default btn-flat"
+                  >Salir</a
+                >
               </div>
             </li>
           </ul>

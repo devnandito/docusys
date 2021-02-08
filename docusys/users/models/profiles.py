@@ -35,4 +35,4 @@ class Profile(CustomModel):
     )
 
     def __str__(self):
-        return self.user
+        return self.description
